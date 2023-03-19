@@ -1,8 +1,17 @@
 <script setup>
-import { ref } from "vue";
+import {ref} from 'vue';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 const count = ref(0);
+
+const addToCount = ()=>{
+  count.value = count.value + 1;
+}
+
+const subtractFromCount = ()=>{
+  count.value = count.value - 1;
+}
+
 </script>
 
 <template>
@@ -10,8 +19,8 @@ const count = ref(0);
     <div >
       <h4>The current count is...</h4>
         <h1 >{{count}}</h1>
-        <button @click="count--" class="btn btn-outline-dark btn-outline-dark button button1">-</button>
-        <button @click="count++" class="btn btn-outline-dark btn-outline-dark button button1">+</button>
+        <button @click="subtractFromCount()" class="btn btn-outline-dark btn-outline-dark button button1">-</button>
+        <button @click="addToCount()" class="btn btn-outline-dark btn-outline-dark button button1">+</button>
     </div>
   </main>
 </template>
@@ -34,6 +43,27 @@ div{
     
 }
 
-.button1 {padding: 10px 24px;margin-right: 20px;margin-left: 20px; text-decoration: solid;
+.button1 {padding: 25px 27px;margin-right: 20px;margin-left: 20px; text-decoration: solid;
 }
 </style>
+
+
+<!-- <script setup>
+import { ref } from "vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+const count = ref(0);
+
+
+</script>
+
+<template>
+  <main >
+    <div >
+      <h4>The current count is...</h4>
+        <h1 >{{count}}</h1>
+        <button @click="count--" class="btn btn-outline-dark btn-outline-dark button button1">-</button>
+        <button @click="count++" class="btn btn-outline-dark btn-outline-dark button button1">+</button>
+    </div>
+  </main>
+</template> -->
